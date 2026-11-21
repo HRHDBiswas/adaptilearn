@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AdaptiLearn — AI-Based Adaptive Quiz Interface</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app" id="app" data-mode="standard">
+
+    <header class="topbar">
+      <h1>AdaptiLearn</h1>
+      <span class="mode-badge" id="modeBadge">Standard Mode</span>
+    </header>
+
+    <main class="card" id="quizCard">
+      <div class="meta-row" id="metaRow">
+        <span id="categoryLabel">Topic: HCI Fundamentals</span>
+        <span id="difficultyLabel">Difficulty: —</span>
+      </div>
+
+      <h2 id="questionText">Loading question…</h2>
+
+      <div class="options" id="optionsList"></div>
+
+      <div class="feedback" id="feedback" aria-live="polite"></div>
+
+      <button class="next-btn" id="nextBtn" style="display:none;">Next question →</button>
+    </main>
+
+    <aside class="statsPanel" id="statsPanel">
+      <h3>Adaptive Profile</h3>
+      <ul>
+        <li>Ability estimate: <span id="statRating">1200</span></li>
+        <li>Answered: <span id="statCount">0</span></li>
+        <li>Accuracy: <span id="statAccuracy">—</span></li>
+        <li>Current streak: <span id="statStreak">0</span></li>
+      </ul>
+      <p class="explain" id="explainText">
+        The engine starts by assuming an average ability level and adjusts
+        after every answer, the same way computerized adaptive tests do.
+      </p>
+      <button class="reset-btn" id="resetBtn">Reset my profile</button>
+    </aside>
+
+  </div>
+
+  <script src="questions.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
